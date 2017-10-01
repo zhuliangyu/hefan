@@ -48,13 +48,21 @@ function getWeek($unixTime = '')
 
 <div class="alert alert-success">通知: UBC的小伙伴们,很多人由于忙于上课错过当天截单时间, 现在截单时间后可以加单,可以加单,可以加单.重要的事情说三遍. Chat我们客服,我们特别安排一位全职客服在早上10-12点之间线上服务.</div>
 
+<!--
+https://jinshuju.net/f/SvfTi6
+https://jinshuju.net/f/FnAr3i
+https://jinshuju.net/f/vSywjm
+https://jinshuju.net/f/eWNquI
+https://jinshuju.net/f/CKtg8Y
+-->
+
 <?php
 $dayOfWeek = date( 'w' );
-$monday    = 'https://jinshuju.net/f/Fabi0M';
-$tuesday   = 'https://jinshuju.net/f/QPXSyV';
-$wednesday = 'https://jinshuju.net/f/sb5fVa';
-$thursday  = 'https://jinshuju.net/f/o8sESl';
-$friday    = 'https://jinshuju.net/f/ySE7dl';
+$monday    = 'https://jinshuju.net/f/SvfTi6';
+$tuesday   = 'https://jinshuju.net/f/FnAr3i';
+$wednesday = 'https://jinshuju.net/f/vSywjm';
+$thursday  = 'https://jinshuju.net/f/eWNquI';
+$friday    = 'https://jinshuju.net/f/CKtg8Y';
 //$saturday  = 'http://sv.mikecrm.com/HXywD9A';
 
 
