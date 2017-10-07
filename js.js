@@ -8,9 +8,12 @@ $(document).ready(function () {
     var today = new Date();
 
     // what is the hour of current time
-    var time = today.getHours();
+    var hour = today.getHours();
     //test for time
     // time=12;
+    var minutes = today.getMinutes();
+
+    var time = hour + minutes/60;
 
     //what is the day today
     var my_day = today.getDay();
@@ -20,6 +23,7 @@ $(document).ready(function () {
     //test for Sunday
 
     console.log(my_day);
+    console.log(time);
 
 
     // if over 11:00AM in the morning and not Sunday
@@ -27,7 +31,7 @@ $(document).ready(function () {
     //for example: Monday 11:30, it will not show monday button
     //sunday will show the next week meals
     //sunday = 0
-    if (time >= 11 && my_day != 0 && my_day != 6 ) {
+    if (time>= 10.5 && my_day != 0 && my_day != 6 ) {
 
         $('button').first().hide();
 
