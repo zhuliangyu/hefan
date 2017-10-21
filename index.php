@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>好好吃饭订餐系统</title>
+    <title>温哥华好好吃饭订餐系统-午餐盒饭</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="./css.css">
@@ -17,11 +17,14 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
             integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
             crossorigin="anonymous"></script>
+    <!--my script-->
+    <script src=" ./js.js"></script>
+    <script src="countdown.js"></script>
 </head>
 <body>
 
 <!--好好吃饭 logo-->
-<img src="/pics/haohaochifan-logo.png" alt="" class='haohao-logo top'>
+<img src="pics/haohaochifan-logo.png" alt="" class='haohao-logo top'>
 
 
 <!--start of 09-10-2017 到09-16-2017订餐表-->
@@ -32,6 +35,16 @@ $week_end   = date( 'm-d-Y', strtotime( '+' . ( 6 - $day ) . ' days' ) );
 ?>
 <h3><?php echo $week_start . ' 到' . $week_end . '订餐表' ?></h3>
 <!--end of 09-10-2017 到09-16-2017订餐表-->
+
+<!--测试本地服务器时间-->
+<?php
+/*设置本地服务器时区为温哥华时间*/
+date_default_timezone_set("America/Vancouver");
+//echo date('Y-m-d h:i:s A');
+?>
+<!--测试本地服务器时间-->
+
+
 
 <?php
 //php获取今天是星期几
@@ -46,7 +59,13 @@ function getWeek($unixTime = '')
 
 <h2>🗓今天是 <span class="label label-warning"><?php echo date( "Y-m-d" ) . getWeek(); ?></span></h2>
 
-<div class="alert alert-success">通知: 10月9日 周一longweekend我们没有送货, 请各位同学周二继续捧场, 谢谢!🙌</div>
+<div class="alert alert-success">通知: 本周推出黄记煌特别套餐, 欢迎订购.  </div>
+
+
+
+<!--countdown-->
+<!--距离下次截单还有xx小时xx分钟-->
+<p id="countdown"></p>
 
 <!--
 https://jinshuju.net/f/SvfTi6
@@ -58,11 +77,11 @@ https://jinshuju.net/f/CKtg8Y
 
 <?php
 $dayOfWeek = date( 'w' );
-$monday    = '';
-$tuesday   = 'https://jinshuju.net/f/MMfuwK';
-$wednesday = 'https://jinshuju.net/f/YSu7bU';
-$thursday  = 'https://jinshuju.net/f/nx9935';
-$friday    = 'https://jinshuju.net/f/ZZ45E0';
+$monday    = 'https://jinshuju.net/f/gjuhvZ';
+$tuesday   = 'https://jinshuju.net/f/iU9rJ0';
+$wednesday = 'https://jinshuju.net/f/l79se1';
+$thursday  = 'https://jinshuju.net/f/LMO38n';
+$friday    = 'https://jinshuju.net/f/srQZUV';
 //$saturday  = 'http://sv.mikecrm.com/HXywD9A';
 
 
@@ -111,6 +130,7 @@ switch (true) {
 
 
 ?>
+<img src="pics/liaokefu.jpg" alt="" style="width: 100%">
 
 <button data-toggle="collapse" data-target="#demo">联系客服</button>
 
@@ -119,7 +139,6 @@ switch (true) {
     <h4>客服微信: Fooshion_catering</h4>
     <h4>客服电话: <a href="tel:6043243663">604-324-3663</a> (早上9点半 - 下午5点半)</h4>
     <h4>邮件客服: <a href="mailto:it@fooshion.net">it@fooshion.net</a></h4>
-    <h5> ( 客服不能代替您下单,只能回答疑问,谢谢. ) </h5>
 
 </div>
 
@@ -138,8 +157,9 @@ switch (true) {
                     <h1><i class="glyphicon glyphicon-thumbs-up"></i> UBC自取地址</h1>
                 </div>
                 <div class="modal-body">
-                    <h4>UBC自提(11:50-12:15): 2136 West Mall 旁Loading zone (English Language Institute 对面)</h4>
-                    <h4>UBC自提(12:20-12:45): Forestry 门口停车场 30分钟停车位</h4>
+                    <h4>UBC和Uhill自提(11:40-11:45) University Hill Secondary School - Wesbrook Save On Food停车场</h4>
+                    <h4>UBC自提(12:00-12:20): 2136 West Mall 旁Loading zone (English Language Institute 对面)</h4>
+                    <h4>UBC自提(12:25-12:45): Forestry 门口停车场 30分钟停车位</h4>
                     <h4>UBC自提(12:50-13:10): Bookstores旁 停车场</h4>
                 </div>
                 <div class="modal-footer">
@@ -171,7 +191,7 @@ switch (true) {
 
     <ul class="list-group">
         <li class="list-group-item">
-            <h3>🎉UBC和Langara的小主们，感谢你们在小店试运行期间的给力支持，凡在UBC（3个<a class="btn btn-info" href="#ubc-info" data-toggle="modal">自提点</a>）和Langara（1个<a class="btn btn-info" href="#lang-info" data-toggle="modal">自提点</a>）自提点取货免运费，一单都送！💪💪</h3>
+            <h3>🎉UBC和Langara的小主们，感谢你们在小店试运行期间的给力支持，凡在UBC（4个<a class="btn btn-info" href="#ubc-info" data-toggle="modal">自提点</a>）和Langara（1个<a class="btn btn-info" href="#lang-info" data-toggle="modal">自提点</a>）自提点取货免运费，一单都送！💪💪</h3>
         </li>
 
         <li class="list-group-item">
@@ -180,7 +200,7 @@ switch (true) {
 
         <li class="list-group-item">
             <h3>📢截單時間：
-            配送範圍內：週一至週五 11:00（建議儘量提前一天下單）
+            配送範圍內：週一至週五 10:30（建議儘量提前一天下單）
             <br>
             配送範圍外：週一至週五 10:30</h3>
         </li>
@@ -221,8 +241,7 @@ switch (true) {
 
 </body>
 
-<!--my script-->
-<script src=" ./js.js"></script>
+
 
 <!--Start of Zendesk Chat Script-->
 <script type="text/javascript">
