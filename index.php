@@ -86,7 +86,7 @@ $friday    = 'https://jinshuju.net/f/Nbabpd';
 
 
 //only for test
-$dayOfWeek = 6;
+//$dayOfWeek = 6;
 
 //let saturday = sunday
 //show all meals for the next week
