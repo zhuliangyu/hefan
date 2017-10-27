@@ -29,11 +29,11 @@
 
 <!--start of 09-10-2017 到09-16-2017订餐表-->
 <?php
-$day        = date( 'w' );
-$week_start = date( 'm-d-Y', strtotime( '-' . $day . ' days' ) );
-$week_end   = date( 'm-d-Y', strtotime( '+' . ( 6 - $day ) . ' days' ) );
-?>
-<h3><?php echo $week_start . ' 到' . $week_end . '订餐表' ?></h3>
+//$day        = date( 'w' );
+//$week_start = date( 'm-d-Y', strtotime( '-' . $day . ' days' ) );
+//$week_end   = date( 'm-d-Y', strtotime( '+' . ( 6 - $day ) . ' days' ) );
+//?>
+<!--<h3>--><?php //echo $week_start . ' 到' . $week_end . '订餐表' ?><!--</h3>-->
 <!--end of 09-10-2017 到09-16-2017订餐表-->
 
 <!--测试本地服务器时间-->
@@ -59,7 +59,7 @@ function getWeek($unixTime = '')
 
 <h2>🗓今天是 <span class="label label-warning"><?php echo date( "Y-m-d" ) . getWeek(); ?></span></h2>
 
-<div class="alert alert-success">通知: 本周推出黄记煌特别套餐, 欢迎订购.  </div>
+<div class="alert alert-success">通知: 由于会计记账以及加拿大企业税务要求, 我们暂时取消网银EMT转账支付, 我们在现场可以接受现金, 微信支付以及VISA MASTER信用卡刷卡服务.给各位顾客带来的不便我们深表抱歉. 感谢你们的支持😚  </div>
 
 
 
@@ -77,16 +77,16 @@ https://jinshuju.net/f/CKtg8Y
 
 <?php
 $dayOfWeek = date( 'w' );
-$monday    = 'https://jinshuju.net/f/gjuhvZ';
-$tuesday   = 'https://jinshuju.net/f/iU9rJ0';
-$wednesday = 'https://jinshuju.net/f/l79se1';
-$thursday  = 'https://jinshuju.net/f/LMO38n';
-$friday    = 'https://jinshuju.net/f/srQZUV';
+$monday    = 'https://jinshuju.net/f/McfEyU';
+$tuesday   = 'https://jinshuju.net/f/uAdORg';
+$wednesday = 'https://jinshuju.net/f/Fb13M7';
+$thursday  = 'https://jinshuju.net/f/66wvpM';
+$friday    = 'https://jinshuju.net/f/Nbabpd';
 //$saturday  = 'http://sv.mikecrm.com/HXywD9A';
 
 
 //only for test
-//$dayOfWeek = 6;
+$dayOfWeek = 6;
 
 //let saturday = sunday
 //show all meals for the next week
